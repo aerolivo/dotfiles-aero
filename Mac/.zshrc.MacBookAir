@@ -154,3 +154,6 @@ alias cd..='cd ..'
 # clear
 alias cl='clear'
 
+# vim
+alias v='vim'
+
