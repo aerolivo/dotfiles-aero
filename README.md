@@ -1,2 +1,3 @@
-# customDotfiles
-Personal dotfiles configuration for linux&amp;mac
+# Custom DotFiles 
+
+Personal dotfiles configuration for linux&amp;mac.
