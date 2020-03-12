@@ -141,5 +141,16 @@ export SECDEC_CONTRIB=/Users/arentol/Applications/pySecDec-1.4.4/
 export PYTHONPATH=/Users/arentol/Applications/pySecDec-1.4.4/pySecDec-1.4.4:$PYTHONPATH
 
 
-alias lhcpheno="ssh arentol@lhcpheno32.ific.uv.es"
+alias lhcpheno="ssh arentol@lhcpheno32.ific.uv.es" 
+
+# some more ls aliases
+alias ll='ls -lh'
+alias la='ls -A'
+alias l='ls -CF'
+
+# cd alias
+alias cd..='cd ..'
+
+# clear
+alias cl='clear'
 
