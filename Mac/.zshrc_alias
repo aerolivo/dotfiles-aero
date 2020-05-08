@@ -1,1 +1,19 @@
-../../.zshrc_alias
+#   Configuration file to store the alias to be used in zsh
+
+#   launch SSH lhcpheno
+    alias lhcpheno="ssh arentol@lhcpheno32.ific.uv.es."
+
+
+#   open XCode 
+    alias xcode="open -a Xcode"
+
+
+#   buil latex
+    alias btex="latexmk"
+
+
+#   terminal shortcuts
+    alias ll="ls -lh"
+    alias la="ls -A"
+    alias l="ls -CF"
+    alias l1="ls -1"
