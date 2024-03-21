@@ -31,12 +31,13 @@ def add_row(snip):
 	snip.expand_anon(final_str)
 endglobal
 
+
 ##########
 # ANDRES #
 ##########
 
 snippet alpha "alpha" w
-\alpha 
+\alpha $0 
 endsnippet 
 
 snippet color "color" b
@@ -50,6 +51,10 @@ snippet mcal "Math Calligraphy" w
 endsnippet
 
 snippet imath "Imaginary math" w
+\imath $0
+endsnippet 
+
+snippet ii "Imaginary math" wA
 \imath $0
 endsnippet 
 
@@ -75,12 +80,16 @@ snippet loopint "Loop integral" b
 endsnippet 
 
 # 	Today Paragraph
-snippet tdpar "Today paragraph" b
-
-%
-\vspace{20pt} {\color{black} %
-\hfill {\large \textbf{ `!v strftime('%Y.%m.%d~|~%Hh%M~|~%A.')`} }\\\ %
-\noindent } %
+snippet todaypar "Today paragraph" b
+`!p
+snip.rv = "%" * (len(t[1]) + 10) + "\n"
+`%    ${1:`!v strftime('%Y.%m.%d(%A);%Hh%M.')`}    %
+`!p
+snip.rv = "%" * (len(t[1]) + 10) 
+`
+\vspace{20pt} {\color{black}%
+\hfill {\large \textbf{ `!v strftime('%Y.%m.%d(%A)~|~%Hh%M.')`} }\\\%
+\noindent}%
 %
 ${0:Text}
 endsnippet
@@ -96,22 +105,22 @@ $ ${1:Inline math} $$0
 endsnippet 
 
 # automatically closing and sizing parenthesis
-snippet (( "Auto-size Parenthesis" wA
+snippet ((( "Auto-size Parenthesis" wA
 \left( ${1} \right) $0
 endsnippet 
 
 # automatically closing and sizing brackets
-snippet [[ "Auto-size Brackets" wA 
+snippet [[[ "Auto-size Brackets" wA 
 \left[ ${1} \right] $0
 endsnippet
 
 # automatically closing and sizing braces 
-snippet {{ "Auto-size Braces" wA
+snippet {{{ "Auto-size Braces" wA
 \left\{ ${1} \rigth\} $0
 endsnippet
 
 # automatically closing and sizing angles bracktes
-snippet << "Auto-sizing Angle Bractes" wA
+snippet <<< "Auto-sizing Angle Bractes" wA
 \left\langle ${1} \right\rangle $0
 endsnippet
 
@@ -124,7 +133,17 @@ snippet timestamp "Comment date" w
 `!v strftime('%Y.%m.%d|%Hh%M')`
 endsnippet
 
-
+#	comment in latex
+snippet comment "Comment Block" b
+`!p
+snip.rv = "%" * (len(t[1]) + 10) + "\n"
+`%    ${1:comment here}    %
+`!p
+snip.rv = "%" * (len(t[1]) + 10) 
+`
+$0
+endsnippet
+ 
 ###############
 # ENVIRONMENT #
 ###############
@@ -270,6 +289,53 @@ snippet DD "D" w
 \mathbb{D}
 endsnippet
 
+# Andres --{{{
+
+snippet mcal "mathcal" w
+\mathcal{$1} $0
+endsnippet
+
+snippet eqref "Eq. ()" w
+Eq. (\ref{$1}) $0
+endsnippet
+
+snippet intell "Dual Integral" w
+\int_{\ell} $0
+endsnippet
+
+snippet intellvec "Dual Integral vector" w
+\int_{\vec{\ell}} $0
+endsnippet
+
+snippet qonsh "q on shell" w
+q_{$1,0}^{(+)} $0
+endsnippet
+
+snippet q0 "q zero" w
+q_{$1,0} $0
+endsnippet 
+
+snippet mu "mu" w
+\mu$0
+endsnippet
+
+snippet dd "differential" w
+{\rm d} $0
+endsnippet 
+
+snippet colour "colour" w
+{\color{$1} 
+$2
+}
+$0
+endsnippet 
+
+snippet eps "epsilon" w
+\epsilon $0
+endsnippet 
+
+# }}}
+
 snippet inmath "Inline Math" w
 \\(${1}\\) $0
 endsnippet
@@ -292,7 +358,7 @@ snippet ss "Super Script" i
 ^{$1}$0
 endsnippet
 
-snippet __ "subscript" Aw
+snippet __ "subscript" i
 _{$1}$0
 endsnippet
 
@@ -479,17 +545,5 @@ endsnippet
 snippet ac "Acroynm normal" bi
 \ac{${1:acronym}}
 endsnippet
-
-# ANDRES #
-
-snippet comment "Custom Comment Block" b
-`!p
-snip.rv = "%" * (len(t[1]) + 10) + "\n"
-`%    ${1:comment here}    %
-`!p
-snip.rv = "%" * (len(t[1]) + 10)
-`
-$0
-endsnippet 
 
 # vim:ft=snippets:
