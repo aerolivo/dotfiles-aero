@@ -1,4 +1,4 @@
-# Custom DotFiles 
+# Custom AERO DotFiles 
 
 Personal dotfiles configuration for linux&amp;mac.
 
@@ -13,4 +13,6 @@ Personal dotfiles configuration for linux&amp;mac.
 # Terminal #
 
 * [How to make linux terminal look awesome](https://www.geeksforgeeks.org/how-to-make-linux-terminal-look-awesome/)
+
+
 
