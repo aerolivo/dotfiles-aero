@@ -42,12 +42,12 @@ endsnippet
 
 snippet color "color" b
 {\color{$1}
-${0:Text}
+${0:${VISUAL} }
 }
 endsnippet 
 
 snippet mcal "Math Calligraphy" w
-\mathcal{$1}$0
+\mathcal{$1} $0
 endsnippet
 
 snippet imath "Imaginary math" w
@@ -94,13 +94,28 @@ snip.rv = "%" * (len(t[1]) + 10)
 ${0:Text}
 endsnippet
 
+#	time paragraph
+snippet timepar	"Time Paragraph" b
+`!p
+snip.rv = "%" * ( len(t[2]) + 10 ) + "\n"
+`%    ${2:`!v strftime('%Hh%M.')`}    %
+`!p
+snip.rv = "%" * ( len(t[2]) + 10 )
+`
+\vspace{20pt}{\color{black}%
+\hfill {\large \textbf{`!v strftime('%A,~%Hh%M.')`} }\\\%
+\noindent}%
+${1:${VISUAL}}
+$0
+endsnippet
+
 #	Nice fraction
 snippet nfrac "Nice fraction" w
 \nicefrac{$1}{$2}$0
 endsnippet 
 
 #	Inline equation
-snippet $$ "Inline math" w
+snippet $$ "Inline math" iA
 $ ${1:Inline math} $$0
 endsnippet 
 
@@ -143,6 +158,10 @@ snip.rv = "%" * (len(t[1]) + 10)
 `
 $0
 endsnippet
+
+snippet tx "text" w
+\text{$1${VISUAL}} $0
+endsnippet 
  
 ###############
 # ENVIRONMENT #
@@ -291,10 +310,6 @@ endsnippet
 
 # Andres --{{{
 
-snippet mcal "mathcal" w
-\mathcal{$1} $0
-endsnippet
-
 snippet eqref "Eq. ()" w
 Eq. (\ref{$1}) $0
 endsnippet
@@ -358,7 +373,7 @@ snippet ss "Super Script" i
 ^{$1}$0
 endsnippet
 
-snippet __ "subscript" i
+snippet __ "subscript" iA
 _{$1}$0
 endsnippet
 
@@ -399,7 +414,7 @@ snippet conj "conjugate" w
 endsnippet
 
 snippet sum "sum" w
-\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+\sum_{${1:i}}^{${2:\infty}} ${3:a_n z^n} $0
 endsnippet
 
 snippet taylor "taylor" w
