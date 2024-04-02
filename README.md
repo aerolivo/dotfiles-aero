@@ -1,4 +1,4 @@
-# Custom DotFiles 
+# Custom AERO DotFiles 
 
 Personal dotfiles configuration for linux&amp;mac.
 
@@ -14,9 +14,13 @@ Personal dotfiles configuration for linux&amp;mac.
 
 * [How to make linux terminal look awesome](https://www.geeksforgeeks.org/how-to-make-linux-terminal-look-awesome/)
 
+<<<<<<< HEAD
 # Improvim VIM #
 
 **FZF: fuzzy finder**
 
 + [A practical guide to fzf: vim integration](https://thevaluable.dev/fzf-vim-integration/)
+=======
+
+>>>>>>> 91ffdd0b2c9242660a7acef4b1019d0712c5fb70
 

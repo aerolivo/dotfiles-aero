@@ -1,0 +1,64 @@
+#   Configuration file to store the alias to be used in zsh shell
+
+#   vim 
+alias vi='vim'
+alias v='vim'
+alias nv='nvim'
+
+#   edit zshrc
+alias ezsh='vim ~/.zshrc'
+
+#   edit aliases
+alias ealias='vim ~/.zshrc_alias'
+
+#   edit vim
+alias evim='vim ~/.vimrc'
+alias envim='nvim .config/nvim/init.vim'
+
+#   configure p10k
+alias ep10k='vim ~/.p10k.zsh'
+alias confp10k='p10k configure'
+
+#   latexmk
+alias lmk='latexmk'
+alias lmkc='latexmk -c'
+alias lmkC='latexmk -C'
+alias texpdf='latexmk -pdf'
+
+#   terminal
+alias ll='ls -lh'
+alias la='ls -A'
+alias l='ls -CF'
+alias l1='ls -1'
+alias cl='clear'
+alias naopen='nautilus'
+alias jlab='jupyter-lab'
+
+#   kitty terminal
+alias ekitty='vim ~/.config/kitty/kitty.conf'
+
+#   linux update 
+alias supdate='sudo apt update && sudo apt upgrade -y'
+alias sinstall='sudo apt install'
+alias sremv='sudo apt remove'
+alias sautrm='sudo apt autoremove'
+
+#   create and extract archives
+alias ctar='tar -czvf'
+alias xtar='tar -xzvf'
+
+#   git
+alias ga='git add'
+alias gadd='git add -v .'
+alias gc='git commit'
+alias gcom='git commit -m'
+alias gp='git push -v'
+alias gpush='git push -v'
+alias gpull='git pull'
+
+#   some other shorcuts
+alias xopen='xdg-open'
+
+#   working directories
+alias thesis='cd ~/Repositories/phd_thesis/'
+alias journal='cd ~/Repositories/phd_journal/'
